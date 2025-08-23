@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Cieldo</title>
+    <style>
+        :root {
+            --primary-color: #ff0000;
+            --secondary-color: #ff7300;
+            --background: #f8f9fa;
+            --text-color: #212529;
+            --light-gray: #e9ecef;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            height: 100px;
+            width: auto;
+            border-radius: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .photo-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .jornal-um img {
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+        }
+        .jornal-um img {
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+        }
+
+        .jornal-dois img {
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+        }
+
+        .jornal-tres img {
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+        }
+
+        .jornal-quatro img {
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+        }
+
+        .jornal-cinco img {
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+        }
+
+        .jornal-seis img {
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+        }
+
+        .jornal-sete img {
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+        }
+        .photo-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-description {
+            margin-top: 1rem;
+            color: #495057;
+        }
+        
+        .upload-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+        }
+        
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            padding: 0.75rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+        }
+        
+        .upload-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .upload-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="img/logo.jpeg" alt="Logotipo da galeria de fotos com ícone de câmera estilizado em azul sobre fundo branco" />
+                <span class="logo-text">Mercado Cieldo Ofertas</span>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <h1 class="gallery-title">Ofertas ativas do Mercado</h1>
+        
+        
+        <div class="gallery-grid">
+            <!-- Foto 1 -->
+            <div class="photo-card">
+                <div class="jornal-um">
+                    <img src="img/jornal0108.jpeg" alt="jornal de oferta n1" />
+                
+                </div>
+                <div class="card-content">
+                    <div class="card-description">
+                        <p>Jornal valido ate o dia 12/07</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Foto 2 -->
+            <div class="photo-card">
+                <div class="jornal-dois">
+                    <img src="img/jornal3107.jpeg" alt="jornal do dia n2" />
+                </div>
+                <div class="card-content">
+                    <div class="card-description">
+                        <p>Jornal valido ate o dia .</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Foto 3 -->
+            <div class="photo-card">
+                <div class="jornal-tres">
+                    <img src="img/jornal3007.jpeg" alt="jornal de oferta n3" />
+                </div>
+                <div class="card-content">
+                    <div class="card-description">
+                        <p>Jornal valido ate o dia .</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Foto 4 -->
+            <div class="photo-card">
+                <div class="jornal-quatro">
+                    <img src="https://placehold.co/600x400" alt="jornal de oferta n4" />
+                </div>
+                <div class="card-content">
+                    <div class="card-description">
+                        <p>Jornal valido ate o dia .</p>
+                    </div>
+                </div>
+            </div>
+             <!-- Foto 5 -->
+            <div class="photo-card">
+                <div class="jornal-cinco">
+                    <img src="https://placehold.co/600x400" alt="jornal de oferta n5" />
+                </div>
+                <div class="card-content">
+                    <div class="card-description">
+                        <p>Jornal valido ate o dia .</p>
+                    </div>
+                </div>
+            </div>
+             <!-- Foto 6 -->
+            <div class="photo-card">
+                <div class="jornal-seis">
+                    <img src="https://placehold.co/600x400" alt="jornal de oferta n6" />
+                </div>
+                <div class="card-content">
+                    <div class="card-description">
+                        <p>Jornal valido ate o dia .</p>
+                    </div>
+                </div>
+            </div>
+             <!-- Foto 7 -->
+            <div class="photo-card">
+                <div class="jornal-sete">
+                    <img src="https://placehold.co/600x400" alt="jornal de oferta n7" />
+                </div>
+                <div class="card-content">
+                    <div class="card-description">
+                        <p>Jornal valido ate o dia .</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <script>
+        document.querySelector('.upload-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fileInput = document.getElementById('photo-upload');
+            const description = document.getElementById('photo-description').value;
+            
+            if (fileInput.files.length === 0 || !description) {
+                alert('Por favor, selecione uma foto e adicione uma descrição.');
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                const galleryGrid = document.querySelector('.gallery-grid');
+                
+                // Criar novo card
+                const newCard = document.createElement('div');
+                newCard.className = 'photo-card';
+                newCard.innerHTML = `
+                    <div class="card-image">
+                        <img src="${e.target.result}" alt="Nova foto enviada pelo usuário" />
+                    </div>
+                    <div class="card-content">
+                        <div class="card-description">
+                            <p>${description}</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Adicionar no início da galeria
+                galleryGrid.prepend(newCard);
+                
+                // Resetar formulário
+                fileInput.value = '';
+                document.getElementById('photo-description').value = '';
+                
+                alert('Foto publicada com sucesso!');
+            };
+            
+            reader.readAsDataURL(file);
+        });
+    </script>
+</body>
+</html>
